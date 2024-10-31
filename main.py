@@ -17,18 +17,18 @@ for j in sorted(os.listdir(input_dir)):
     for qr in qr_info:
         
         #features that we want
-        data = qr.data
-        rect = qr.rect
-        polygon = qr.polygon
+        data = qr.data # data
+        rect = qr.rect # size
+        polygon = qr.polygon # location
 
-        print(data) # data
-        print(rect) # size
-        print(polygon) # location
+        print(data) 
+        print(rect) 
+        print(polygon) 
 
         img = cv2.rectangle(img, (rect.left, rect.top), (rect.left + rect.width, rect.top + rect.width), 
                             (0,255,0), 5) 
         
-        img = cv2.polylines(img, [np.array(polygon)], True, (255,0,0), 3) 
+        img = cv2.polylines(img, [np.array(polygon)], False, (255,0,0), 3) 
 
         plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
         plt.show()
