@@ -28,7 +28,7 @@ for j in sorted(os.listdir(input_dir)):
         img = cv2.rectangle(img, (rect.left, rect.top), (rect.left + rect.width, rect.top + rect.width), 
                             (0,255,0), 5) 
         
-        img = cv2.polylines(img, [np.array(polygon)], False, (255,0,0), 3) 
+        img = cv2.polylines(img, [np.array(polygon)], True, (255,0,0), 3) 
 
         plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
         plt.show()
